@@ -1,0 +1,242 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 1073741824 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3686), pid=152096, tid=141652
+#
+# JRE version:  (21.0.6+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.6+7-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Users\emeri\AppData\Local\JetBrains\IntelliJIdea2025.1\captureAgent\debugger-agent.jar=file:///C:/Users/emeri/AppData/Local/Temp/capture8154988627060699852.props -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2025.1.2\lib\idea_rt.jar=12334 -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false -Ddebugger.agent.enable.coroutines=true -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 com.example.ejb.BeneficioEjbServiceTest
+
+Host: Intel(R) Core(TM) i9-10900 CPU @ 2.80GHz, 20 cores, 63G,  Windows 11 , 64 bit Build 26100 (10.0.26100.5074)
+Time: Wed Oct 22 22:43:53 2025 Hora oficial do Brasil elapsed time: 2.080684 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000227115da990):  JavaThread "Unknown thread" [_thread_in_vm, id=141652, stack(0x000000e19cd00000,0x000000e19ce00000) (1024K)]
+
+Stack: [0x000000e19cd00000,0x000000e19ce00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6da5e9]
+V  [jvm.dll+0x8b6b73]
+V  [jvm.dll+0x8b8ece]
+V  [jvm.dll+0x8b95b3]
+V  [jvm.dll+0x286256]
+V  [jvm.dll+0x6d6ea5]
+V  [jvm.dll+0x6cabba]
+V  [jvm.dll+0x35f57b]
+V  [jvm.dll+0x367146]
+V  [jvm.dll+0x3b9416]
+V  [jvm.dll+0x3b96e8]
+V  [jvm.dll+0x332c6c]
+V  [jvm.dll+0x33395b]
+V  [jvm.dll+0x87ee59]
+V  [jvm.dll+0x3c65d1]
+V  [jvm.dll+0x868173]
+V  [jvm.dll+0x45a4ee]
+V  [jvm.dll+0x45c171]
+C  [jli.dll+0x52ab]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8d9c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fff84e1a088, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x00000227297d0890 WorkerThread "GC Thread#0"                     [id=74804, stack(0x000000e19ce00000,0x000000e19cf00000) (1024K)]
+  0x0000022711658c30 ConcurrentGCThread "G1 Main Marker"            [id=155336, stack(0x000000e19cf00000,0x000000e19d000000) (1024K)]
+  0x00000227116596a0 WorkerThread "G1 Conc#0"                       [id=140804, stack(0x000000e19d000000,0x000000e19d100000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff84515d27]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fff84e8e420] Heap_lock - owner thread: 0x00000227115da990
+
+Heap address: 0x0000000401000000, size: 16368 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 64 size 144 Howl #buckets 8 coarsen threshold 14745 Howl Bitmap #cards 2048 size 272 coarsen threshold 1843 Card regions per heap region 1 cards per card region 16384
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000401000000, 0x0000000800000000)
+  region size 8192K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff84904059]
+GC Heap History (0 events):
+No events
+
+Dll operation events (2 events):
+Event: 0.025 Loaded shared library C:\Users\emeri\.jdks\corretto-21.0.6\bin\java.dll
+Event: 0.037 Loaded shared library C:\Users\emeri\.jdks\corretto-21.0.6\bin\zip.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff633f90000 - 0x00007ff633f9e000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\java.exe
+0x00007ff86d400000 - 0x00007ff86d669000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff86bf00000 - 0x00007ff86bfc9000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff86ab60000 - 0x00007ff86af53000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff86a840000 - 0x00007ff86a98b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff857a20000 - 0x00007ff857a3b000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\VCRUNTIME140.dll
+0x00007ff84a780000 - 0x00007ff84a798000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\jli.dll
+0x00007ff86bfe0000 - 0x00007ff86c1a4000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff86af60000 - 0x00007ff86af87000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff86c860000 - 0x00007ff86c88b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff86a990000 - 0x00007ff86aabd000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8500e0000 - 0x00007ff850373000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5074_none_3e0d6f78e32fd63f\COMCTL32.dll
+0x00007ff86a590000 - 0x00007ff86a633000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff86d220000 - 0x00007ff86d2c9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff86bec0000 - 0x00007ff86beef000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff8674b0000 - 0x00007ff8674bc000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\vcruntime140_1.dll
+0x00007ff827ab0000 - 0x00007ff827b3d000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\msvcp140.dll
+0x00007fff841d0000 - 0x00007fff84f6f000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\server\jvm.dll
+0x00007ff86c1b0000 - 0x00007ff86c264000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff86b360000 - 0x00007ff86b406000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff86bbd0000 - 0x00007ff86bce8000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff86b410000 - 0x00007ff86b484000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff86a260000 - 0x00007ff86a2be000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff8595c0000 - 0x00007ff8595f5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff868ec0000 - 0x00007ff868ecb000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff86a240000 - 0x00007ff86a254000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff869330000 - 0x00007ff86934b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff865930000 - 0x00007ff86593a000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\jimage.dll
+0x00007ff85eed0000 - 0x00007ff85f112000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff86b490000 - 0x00007ff86b80b000 	C:\WINDOWS\System32\combase.dll
+0x00007ff86d2e0000 - 0x00007ff86d3b7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff845070000 - 0x00007ff8450ad000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff86aac0000 - 0x00007ff86ab59000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff84ac00000 - 0x00007ff84ac0e000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\instrument.dll
+0x00007ff84a3b0000 - 0x00007ff84a3cf000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\java.dll
+0x00007ff84a020000 - 0x00007ff84a038000 	C:\Users\emeri\.jdks\corretto-21.0.6\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\emeri\.jdks\corretto-21.0.6\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5074_none_3e0d6f78e32fd63f;C:\Users\emeri\.jdks\corretto-21.0.6\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Users\emeri\AppData\Local\JetBrains\IntelliJIdea2025.1\captureAgent\debugger-agent.jar=file:///C:/Users/emeri/AppData/Local/Temp/capture8154988627060699852.props -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2025.1.2\lib\idea_rt.jar=12334 -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false -Ddebugger.agent.enable.coroutines=true -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 
+java_command: com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 com.example.ejb.BeneficioEjbServiceTest
+java_class_path (initial): C:\Users\emeri\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.2\junit-platform-launcher-1.10.2.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2025.1.2\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2025.1.2\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2025.1.2\plugins\junit\lib\junit-rt.jar;E:\teste\bip-teste-integrado-main\bip-teste-integrado-main\ejb-module\target\test-classes;E:\teste\bip-teste-integrado-main\bip-teste-integrado-main\ejb-module\target\classes;C:\Users\emeri\.m2\repository\jakarta\platform\jakarta.jakartaee-api\10.0.0\jakarta.jakartaee-api-10.0.0.jar;C:\Users\emeri\.m2\repository\jakarta\platform\jakarta.jakartaee-web-api\10.0.0\jakarta.jakartaee-web-api-10.0.0.jar;C:\Users\emeri\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar;C:\Users\emeri\.m2\repository\jakarta\servlet\jsp\jakarta.servlet.jsp-api\3.1.0\jakarta.servlet.jsp-api-3.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\el\jakarta.el-api\5.0.1\jakarta.el-api-5.0.1.jar;C:\Users\emeri\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\3.0.0\jakarta.servlet.jsp.jstl-api-3.0.0.jar;C:\Users\emeri\.m2\repository\jakarta\faces\jakarta.faces-api\4.0.1\jakarta.faces-api-4.0.1.jar;C:\Users\emeri\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.1.0\jakarta.ws.rs-api-3.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\websocket\jakarta.websocket-api\2.1.0\jakarta.websocket-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\websocket\jakarta.websocket-client-api\2.1.0\jakarta.websocket-client-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\json\jakarta.json-api\2.1.0\jakarta.json-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\json\bind\jakarta.json.bind-api\3.0.0\jakarta.json.bind-api-3.0.0.jar;C:\Users\emeri\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\emeri\.m2\repository\jakarta\ejb\jakarta.ejb-api\4.0.1\jakarta.ejb-api-4.0.1.jar;C:\Users\emeri\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\emeri\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\emeri\.m2\repository\jakarta\interceptor\jakarta.interceptor-api\2.1.0\jakarta.interceptor-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\enterprise\jakarta.enterprise.cdi-api\4.0.1\jakarta.enterprise.cdi-api-4.0.1.jar;C:\Users\emeri\.m2\repository\jakarta\enterprise\jakarta.enterprise.lang-model\4.0.1\jakarta.enterprise.lang-model-4.0.1.jar;C:\Users\emeri\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\emeri\.m2\repository\jakarta\authentication\jakarta.authentication-api\3.0.0\jakarta.authentication-api-3.0.0.jar;C:\Users\emeri\.m2\repository\jakarta\security\enterprise\jakarta.security.enterprise-api\3.0.0\jakarta.security.enterprise-api-3.0.0.jar;C:\Users\emeri\.m2\repository\jakarta\jms\jakarta.jms-api\3.1.0\jakarta.jms-api-3.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.0\jakarta.activation-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\mail\jakarta.mail-api\2.1.0\jakarta.mail-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\resource\jakarta.resource-api\2.1.0\jakarta.resource-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\authorization\jakarta.authorization-api\2.1.0\jakarta.authorization-api-2.1.0.jar;C:\Users\emeri\.m2\repository\jakarta\batch\jakarta.batch-api\2.1.1\jakarta.batch-api-2.1.1.jar;C:\Users\emeri\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\emeri\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\emeri\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\emeri\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\emeri\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\emeri\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\emeri\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\emeri\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\emeri\.m2\repository\org\mockito\mockito-core\5.11.0\mockito-core-5.11.0.jar;C:\Users\emeri\.m2\repository\net\bytebuddy\byte-buddy\1.14.12\byte-buddy-1.14.12.jar;C:\Users\emeri\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar;C:\Users\emeri\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 4                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 15                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 8388608                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 1073741824                                {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 17163091968                               {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 8388608                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7602480                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122027880                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122027880                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 17163091968                            {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17
+PATH=C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Microsoft VS Code\bin;C:\Users\emeri\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\dotnet\;E:\platform-tools;;E:\RTX_AI\Install\env_nvd_rag\Lib\site-packages\torch\lib;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;D:\tizen-studio\tools\ide\bin;C:\Users\emeri\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2023.1.3\bin;C:\Users\emeri\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\emeri\.dotnet\tools;C:\Users\emeri\AppData\Local\GitHubDesktop\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files (x86)\Nmap;C:\Users\emeri\Downloads\opencv490\opencv\build\x64;C:\Users\emeri\AppData\Local\Programs\Fiddler;C:\Users\emeri\AppData\Local\Microsoft\WindowsApps;E:\ffmpeg-7.1.1-full_build\bin;E:\windows;C:\Program Files\JetBrains\IntelliJ IDEA 2025.1.2\bin;;C:\Users\emeri\AppData\Local\Programs\cursor\resources\app\bin;C:\Python27;C:\xampp\php;C:\Users\emeri\AppData\Local\ComposerSetup\bin;C:\Users\emeri\AppData\Roaming\Composer\vendor\bin
+USERNAME=emeri
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 165 Stepping 5, GenuineIntel
+TMP=C:\Users\emeri\AppData\Local\Temp
+TEMP=C:\Users\emeri\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.5074)
+OS uptime: 29 days 21:52 hours
+Hyper-V role detected
+
+CPU: total 20 (initial active 20) (10 cores per cpu, 2 threads per core) family 6 model 165 stepping 5 microcode 0xe0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, f16c
+Processor Information for the first 20 processors :
+  Max Mhz: 2808, Current Mhz: 2808, Mhz Limit: 2808
+
+Memory: 4k page, system-wide physical 65449M (32351M free)
+TotalPageFile size 65449M (AvailPageFile size 893M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 76M, peak: 1099M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.6+7-LTS) for windows-amd64 JRE (21.0.6+7-LTS), built on 2025-01-07T23:42:01Z by "Administrator" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.

@@ -32,3 +32,31 @@ Criar solução completa em camadas (DB, EJB, Backend, Frontend), corrigindo bug
 - Testes (15%)
 - Documentação (10%)
 - Frontend (10%)
+
+---
+
+## 📚 Documentação da API (Swagger)
+Foi adicionada a documentação OpenAPI/Swagger ao backend (Spring Boot) usando o springdoc-openapi.
+
+- Swagger UI: http://localhost:8080/swagger-ui/index.html
+- Documentação JSON (OpenAPI): http://localhost:8080/v3/api-docs
+
+A UI lista automaticamente os endpoints do controller `BeneficioController` sob o path `/api/v1/beneficios`.
+
+### Como executar o backend
+1. Certifique-se de ter o Java 17+ e Maven instalados.
+2. Na raiz do projeto, rode primeiro `mvn -q -pl ejb-module -am install` para compilar o módulo EJB.
+3. Depois rode o backend: `mvn -q -pl backend-module -am spring-boot:run`.
+4. Acesse a documentação em `http://localhost:8080/swagger-ui/index.html`.
+
+### Endpoints principais
+- GET `/api/v1/beneficios` — Lista benefícios
+- GET `/api/v1/beneficios/{id}` — Detalha um benefício
+- POST `/api/v1/beneficios` — Cria
+- PUT `/api/v1/beneficios/{id}` — Atualiza
+- DELETE `/api/v1/beneficios/{id}` — Remove
+- POST `/api/v1/beneficios/transfer` — Transfere saldo entre benefícios `{fromId, toId, amount}`
+
+### Observações
+- CORS liberado para `http://localhost:4200` (frontend Angular).
+- O arquivo `OpenApiConfig.java` define metadados (título/versão) da documentação.
